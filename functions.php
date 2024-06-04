@@ -30,4 +30,4 @@ $container = $builder->build();
 ( $container->get( Hook::class ) )->register_hooks();
 
 // Register CLI Commands.
-( new CLI( $container ) )->register_commands();
+( $container->get( CLI::class ) )->register_commands();

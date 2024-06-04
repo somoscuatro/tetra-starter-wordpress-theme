@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace Somoscuatro\Starter_Theme\CLI;
 
+use DI\Attribute\Inject;
 use DI\Container;
 
 /**
@@ -21,16 +22,8 @@ class CLI {
 	 *
 	 * @var Container
 	 */
+	#[Inject]
 	private Container $container;
-
-	/**
-	 * Class Constructor.
-	 *
-	 * @param Container $container The PHP DI Container.
-	 */
-	public function __construct( Container $container ) {
-		$this->container = $container;
-	}
 
 	/**
 	 * Registers CLI Commands.
