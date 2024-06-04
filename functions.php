@@ -27,7 +27,7 @@ $builder->useAttributes( true );
 $container = $builder->build();
 
 // Register WordPress Hooks.
-( new Hook( $container ) )->register_hooks();
+( $container->get( Hook::class ) )->register_hooks();
 
 // Register CLI Commands.
 ( new CLI( $container ) )->register_commands();
