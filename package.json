@@ -15,15 +15,15 @@
 		"build:storybook": "storybook build",
 		"run:chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --build-script-name=build:storybook",
 		"deploy:storybook": "npx dotenv-run-script run:chromatic",
-		"lint": "pnpm run lint:php & pnpm run lint:css & pnpm run lint:js",
+		"lint": "bun run lint:php & bun run lint:css & bun run lint:js",
 		"lint:php": "composer lint",
 		"lint:css": "stylelint --quiet-deprecation-warnings ./**/*.css",
-		"lint:js": "eslint ./**/*.js",
-		"lint-fix": "pnpm run lint-fix:php & pnpm run lint-fix:js & pnpm run lint-fix:css",
+		"lint:js": "eslint './**/*.ts' './**/*.js'",
+		"lint-fix": "bun run lint-fix:php & bun run lint-fix:js & bun run lint-fix:css",
 		"lint-fix:php": "composer lint:fix",
 		"lint-fix:css": "prettier --write ./**/*.css",
-		"lint-fix:js": "eslint ./**/*.js --fix && prettier --write ./**/*.js",
-		"sniff": "pnpm run sniff:php",
+		"lint-fix:js": "eslint './**/*.ts' './**/*.js' --fix && prettier --write ./**/*.ts ./**/*.js",
+		"sniff": "bun run sniff:php",
 		"sniff:php": "composer sniff",
 		"deploy": "bash .github/scripts/bump-version.sh && git push origin main && git push origin --tags && bash .github/scripts/create-release-notes.sh && gh release create \"$(<.github/.version)\" --title \"$(<.github/.version)\" --notes \"$(<.github/.release-notes)\"",
 		"postinstall": "husky"
@@ -63,6 +63,7 @@
 		"husky": "^9.0.11",
 		"husky-init": "^8.0.0",
 		"lint-staged": "^15.2.2",
+		"minimatch": "^10.1.1",
 		"prettier": "^3.2.5",
 		"storybook": "^8.0.5",
 		"stylelint": "^16.3.0",
@@ -70,6 +71,5 @@
 		"ts-loader": "^9.5.1",
 		"twigjs-loader": "^1.0.3",
 		"typescript": "^5.4.4"
-	},
-	"packageManager": "pnpm@9.1.4+sha512.9df9cf27c91715646c7d675d1c9c8e41f6fce88246f1318c1aa6a1ed1aeb3c4f032fcdf4ba63cc69c4fe6d634279176b5358727d8f2cc1e65b65f43ce2f8bfb0"
+	}
 }
