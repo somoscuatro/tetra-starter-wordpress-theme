@@ -64,7 +64,7 @@
 		"husky-init": "^8.0.0",
 		"lint-staged": "^15.5.2",
 		"minimatch": "^10.1.1",
-		"prettier": "^3.2.5",
+		"prettier": "^3.7.1",
 		"storybook": "^8.0.5",
 		"stylelint": "^16.3.0",
 		"stylelint-config-recommended": "^14.0.0",
