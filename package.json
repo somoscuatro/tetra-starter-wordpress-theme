@@ -70,6 +70,6 @@
 		"stylelint-config-recommended": "^14.0.1",
 		"ts-loader": "^9.5.4",
 		"twigjs-loader": "^1.0.3",
-		"typescript": "^5.4.4"
+		"typescript": "^5.9.3"
 	}
 }
