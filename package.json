@@ -50,7 +50,7 @@
 		"@storybook/addon-essentials": "^8.6.14",
 		"@storybook/addon-webpack5-compiler-swc": "^1.0.6",
 		"@storybook/blocks": "^8.6.14",
-		"@storybook/html-webpack5": "^8.0.5",
+		"@storybook/html-webpack5": "^8.6.14",
 		"@storybook/theming": "^8.0.5",
 		"@wordpress/eslint-plugin": "^17.11.0",
 		"@wordpress/prettier-config": "^3.11.0",
