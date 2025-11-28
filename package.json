@@ -38,7 +38,7 @@
 		"laravel-mix": "^6.0.49",
 		"postcss": "^8.5.6",
 		"postcss-extend": "^1.0.5",
-		"postcss-import": "^16.1.0",
+		"postcss-import": "^16.1.1",
 		"postcss-nesting": "^12.1.0",
 		"tailwindcss": "^3.4.1",
 		"webpack": "^5.91.0"
