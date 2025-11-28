@@ -8,13 +8,13 @@
 		"url": "https://somoscuatro.es"
 	},
 	"scripts": {
-		"dev": "npx mix watch",
+		"dev": "bun x mix watch",
 		"dev:storybook": "storybook dev -p 6006",
-		"build": "npx mix build",
-		"build:prod": "npx mix --production",
+		"build": "bun x mix build",
+		"build:prod": "bun x mix --production",
 		"build:storybook": "storybook build",
-		"run:chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --build-script-name=build:storybook",
-		"deploy:storybook": "npx dotenv-run-script run:chromatic",
+		"run:chromatic": "bun x chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --build-script-name=build:storybook",
+		"deploy:storybook": "bun x dotenv-run-script run:chromatic",
 		"lint": "bun run lint:php & bun run lint:css & bun run lint:js",
 		"lint:php": "composer lint",
 		"lint:css": "stylelint --quiet-deprecation-warnings ./**/*.css",
