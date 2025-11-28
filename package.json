@@ -67,7 +67,7 @@
 		"prettier": "^3.7.1",
 		"storybook": "^8.6.14",
 		"stylelint": "^16.26.1",
-		"stylelint-config-recommended": "^14.0.0",
+		"stylelint-config-recommended": "^14.0.1",
 		"ts-loader": "^9.5.1",
 		"twigjs-loader": "^1.0.3",
 		"typescript": "^5.4.4"
