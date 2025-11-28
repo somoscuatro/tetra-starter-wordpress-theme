@@ -12,4 +12,4 @@ previous_tag=$(git describe --tags --abbrev=0 $(git rev-list --tags --max-count=
 # Generate the release notes content
 echo "**CHANGELOG:**" >.github/.release-notes
 echo "" >>.github/.release-notes
-echo "- https://github.com/somoscuatro/sc-starter-theme/compare/${previous_tag}...${new_version}" >>.github/.release-notes
+echo "- https://github.com/somoscuatro/tetra-starter-wordpress-theme/compare/${previous_tag}...${new_version}" >>.github/.release-notes

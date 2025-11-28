@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\Custom_Post_Types\Custom_Post_Type Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
@@ -59,17 +59,17 @@ class Custom_Post_Type {
 		$labels = array(
 			'name'               => $this->plural_name,
 			'singular_name'      => $this->singular_name,
-			'add_new'            => __( 'Add New', 'sc-starter-theme' ),
-			'add_new_item'       => sprintf( __( 'Add New %s', 'sc-starter-theme' ), $this->singular_name ),
-			'edit'               => __( 'Edit', 'sc-starter-theme' ),
-			'edit_item'          => sprintf( __( 'Edit %s', 'sc-starter-theme' ), $this->singular_name ),
-			'new_item'           => sprintf( __( 'New %s', 'sc-starter-theme' ), $this->singular_name ),
-			'view'               => __( 'View', 'sc-starter-theme' ),
-			'view_item'          => sprintf( __( 'View %s', 'sc-starter-theme' ), $this->singular_name ),
-			'search_items'       => sprintf( __( 'Search %s', 'sc-starter-theme' ), $this->plural_name ),
-			'not_found'          => sprintf( __( 'No %s found', 'sc-starter-theme' ), $this->plural_name ),
-			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'sc-starter-theme' ), $this->plural_name ),
-			'parent'             => sprintf( __( 'Parent %s', 'sc-starter-theme' ), $this->singular_name ),
+			'add_new'            => __( 'Add New', 'tetra-starter-wordpress-theme' ),
+			'add_new_item'       => sprintf( __( 'Add New %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
+			'edit'               => __( 'Edit', 'tetra-starter-wordpress-theme' ),
+			'edit_item'          => sprintf( __( 'Edit %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
+			'new_item'           => sprintf( __( 'New %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
+			'view'               => __( 'View', 'tetra-starter-wordpress-theme' ),
+			'view_item'          => sprintf( __( 'View %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
+			'search_items'       => sprintf( __( 'Search %s', 'tetra-starter-wordpress-theme' ), $this->plural_name ),
+			'not_found'          => sprintf( __( 'No %s found', 'tetra-starter-wordpress-theme' ), $this->plural_name ),
+			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'tetra-starter-wordpress-theme' ), $this->plural_name ),
+			'parent'             => sprintf( __( 'Parent %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
 		);
 		// phpcs:enable WordPress.WP.I18n.MissingTranslatorsComment
 

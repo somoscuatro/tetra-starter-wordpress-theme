@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\Gutenberg Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
@@ -22,21 +22,16 @@ class Gutenberg {
 	/**
 	 * Registers Gutenberg Custom Category.
 	 *
-	 * @param array[]                 $block_categories     Array of Categories for Block Types.
-	 * @param WP_Block_Editor_Context $block_editor_context The Current Block Editor Context.
+	 * @param array[] $block_categories Array of Categories for Block Types.
 	 */
-	#[Filter( 'block_categories_all', accepted_args: 2 )]
-	public function add_custom_block_category( array $block_categories, WP_Block_Editor_Context $block_editor_context ): array {
-		if ( ! ( $block_editor_context instanceof WP_Block_Editor_Context ) ) {
-			return $block_categories;
-		}
-
+	#[Filter( 'block_categories_all' )]
+	public function add_custom_block_category( array $block_categories ): array {
 		return array_merge(
 			$block_categories,
 			array(
 				array(
 					'slug'  => 'somoscuatro',
-					'title' => esc_html__( 'Somoscuatro Custom Blocks', 'sc-starter-theme' ),
+					'title' => esc_html__( 'Somoscuatro Custom Blocks', 'tetra-starter-wordpress-theme' ),
 				),
 			)
 		);

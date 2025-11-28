@@ -11,28 +11,27 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - uses: pnpm/action-setup@v2
-              name: Install pnpm
+            - name: Get bun cache directory
+              id: bun-cache
+              run: echo "dir=node_modules" >> $GITHUB_OUTPUT
+
+            - name: Cache bun dependencies
+              uses: actions/cache@v4
               with:
-                  version: 8.6.2
+                path: ${{ steps.bun-cache.outputs.dir }}
+                key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+                restore-keys: ${{ runner.os }}-bun-
 
-            - name: Get pnpm store directory
-              id: pnpm-cache
-              shell: bash
+            - name: Install Bun
               run: |
-                  echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+                curl -fsSL https://bun.sh/install | bash
+                echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
-            - uses: actions/cache@v3
-              name: Setup pnpm cache
-              with:
-                  path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-                  restore-keys: |
-                      ${{ runner.os }}-pnpm-store-
-
-            - name: Install dependencies
+            - name: Install Node dependencies and build frontend assets
               run: |
-                  pnpm install -D
+                rm -rf node_modules bun.lock package-lock.json
+                bun install
+                bun run build
 
             - name: Run commitlint
               run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
@@ -80,31 +79,30 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - uses: pnpm/action-setup@v2
-              name: Install pnpm
+            - name: Get bun cache directory
+              id: bun-cache
+              run: echo "dir=node_modules" >> $GITHUB_OUTPUT
+
+            - name: Cache bun dependencies
+              uses: actions/cache@v4
               with:
-                  version: 8.6.2
+                path: ${{ steps.bun-cache.outputs.dir }}
+                key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+                restore-keys: ${{ runner.os }}-bun-
 
-            - name: Get pnpm store directory
-              id: pnpm-cache
-              shell: bash
+            - name: Install Bun
               run: |
-                  echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+                curl -fsSL https://bun.sh/install | bash
+                echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
-            - uses: actions/cache@v3
-              name: Setup pnpm cache
-              with:
-                  path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-                  restore-keys: |
-                      ${{ runner.os }}-pnpm-store-
-
-            - name: Install dependencies
+            - name: Install Node dependencies and build frontend assets
               run: |
-                  pnpm install -D
+                rm -rf node_modules bun.lock package-lock.json
+                bun install
+                bun run build
 
             - name: Run ESlint
-              run: pnpm run lint:js
+              run: bun run lint:js
 
     stylelint:
         name: Stylelint
@@ -114,28 +112,27 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - uses: pnpm/action-setup@v2
-              name: Install pnpm
+            - name: Get bun cache directory
+              id: bun-cache
+              run: echo "dir=node_modules" >> $GITHUB_OUTPUT
+
+            - name: Cache bun dependencies
+              uses: actions/cache@v4
               with:
-                  version: 8.6.2
+                path: ${{ steps.bun-cache.outputs.dir }}
+                key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+                restore-keys: ${{ runner.os }}-bun-
 
-            - name: Get pnpm store directory
-              id: pnpm-cache
-              shell: bash
+            - name: Install Bun
               run: |
-                  echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+                curl -fsSL https://bun.sh/install | bash
+                echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
-            - uses: actions/cache@v3
-              name: Setup pnpm cache
-              with:
-                  path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-                  restore-keys: |
-                      ${{ runner.os }}-pnpm-store-
-
-            - name: Install dependencies
+            - name: Install Node dependencies and build frontend assets
               run: |
-                  pnpm install -D
+                rm -rf node_modules bun.lock package-lock.json
+                bun install
+                bun run build
 
             - name: Run Stylelint
-              run: pnpm run lint:css
+              run: bun run lint:css

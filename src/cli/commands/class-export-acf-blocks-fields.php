@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\CLI\Commands\Export_ACF_Blocks_Fields Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
@@ -80,10 +80,7 @@ class Export_ACF_Blocks_Fields extends CLI_Command {
 			return;
 		}
 
-		$json = '';
-		if ( method_exists( $namespaced_block_class, 'get_acf_fields' ) ) {
-			$json = wp_json_encode( ( new $namespaced_block_class( $this->timber ) )->get_acf_fields() );
-		}
+		$json = wp_json_encode( ( new $namespaced_block_class( $this->timber ) )->get_acf_fields() );
 
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents,WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
 		file_put_contents( $this->blocks_base_path . $block . '/fields.json', $json );
