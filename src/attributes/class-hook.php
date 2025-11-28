@@ -7,6 +7,7 @@
 
 namespace Somoscuatro\Starter_Theme\Attributes;
 
+use DI\Attribute\Inject;
 use DI\Container;
 
 use ReflectionAttribute;
@@ -22,32 +23,17 @@ class Hook {
 	 *
 	 * @var Container
 	 */
+	#[Inject]
 	private Container $container;
-
-	/**
-	 * The Names of the Classes That Contain Hooks Handlers.
-	 *
-	 * @var array
-	 */
-	private array $hooked_classes = array();
-
-	/**
-	 * Class Constructor.
-	 *
-	 * @param Container $container The PHP DI Container.
-	 */
-	public function __construct( Container $container ) {
-		$this->container      = $container;
-		$this->hooked_classes = require __DIR__ . '/hooked-classes.php';
-	}
 
 	/**
 	 * Registers Hooks.
 	 */
 	public function register_hooks(): void {
-		$instances = array();
+		$hooked_classes = require __DIR__ . '/hooked-classes.php';
+		$instances      = array();
 
-		foreach ( $this->hooked_classes as $class_name ) {
+		foreach ( $hooked_classes as $class_name ) {
 			$reflection_class = new ReflectionClass( $class_name );
 
 			foreach ( $reflection_class->getMethods() as $method ) {
