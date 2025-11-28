@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\BLocks\Sample\Sample Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
@@ -31,17 +31,17 @@ class Sample extends Block {
 	public function get_acf_fields(): array {
 		return array(
 			'key'      => 'group_' . static::$acf_block_prefix,
-			'title'    => __( 'Block: Sample', 'sc-starter-theme' ),
+			'title'    => __( 'Block: Sample', 'tetra-starter-wordpress-theme' ),
 			'fields'   => array(
 				array(
 					'key'   => 'field_' . self::$acf_block_prefix . '_image',
-					'label' => __( 'Image', 'sc-starter-theme' ),
+					'label' => __( 'Image', 'tetra-starter-wordpress-theme' ),
 					'name'  => self::$acf_block_prefix . '_image',
 					'type'  => 'image',
 				),
 				array(
 					'key'           => 'field_' . static::$acf_block_prefix . '_heading',
-					'label'         => __( 'Heading', 'sc-starter-theme' ),
+					'label'         => __( 'Heading', 'tetra-starter-wordpress-theme' ),
 					'name'          => static::$acf_block_prefix . '_heading',
 					'type'          => 'text',
 					'required'      => 1,
@@ -49,7 +49,7 @@ class Sample extends Block {
 				),
 				array(
 					'key'           => 'field_' . static::$acf_block_prefix . '_text',
-					'label'         => __( 'Text', 'sc-starter-theme' ),
+					'label'         => __( 'Text', 'tetra-starter-wordpress-theme' ),
 					'name'          => static::$acf_block_prefix . '_text',
 					'type'          => 'wysiwyg',
 					'required'      => 1,
@@ -57,7 +57,7 @@ class Sample extends Block {
 				),
 				array(
 					'key'           => 'field_' . static::$acf_block_prefix . '_button',
-					'label'         => __( 'Button', 'sc-starter-theme' ),
+					'label'         => __( 'Button', 'tetra-starter-wordpress-theme' ),
 					'name'          => static::$acf_block_prefix . '_button',
 					'type'          => 'link',
 					'required'      => 1,

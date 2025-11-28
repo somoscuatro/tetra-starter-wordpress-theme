@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\Custom_Post_Types\Post_Types\Samples Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);

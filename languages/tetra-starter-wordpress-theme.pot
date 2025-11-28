@@ -1,7 +1,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: sc-starter-theme\n"
+"Project-Id-Version: tetra-starter-wordpress-theme\n"
 "POT-Creation-Date: 2024-04-04 13:04+0200\n"
 "PO-Revision-Date: 2015-06-19 15:29+0100\n"
 "Last-Translator: \n"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: src/class-theme.php:79
 #, php-format
-msgid "%s plugin is not installed. Please install the plugin to use the Somoscuatro Starter Theme."
+msgid "%s plugin is not installed. Please install the plugin to use the TetraStarter WordPress Theme."
 msgstr ""
 
 #: src/class-timber.php:62

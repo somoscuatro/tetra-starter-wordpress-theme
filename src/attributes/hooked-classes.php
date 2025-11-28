@@ -2,7 +2,7 @@
 /**
  * List of Classes to Be Hooked.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 use Somoscuatro\Starter_Theme\ACF;
