@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\Gutenberg Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
@@ -31,7 +31,7 @@ class Gutenberg {
 			array(
 				array(
 					'slug'  => 'somoscuatro',
-					'title' => esc_html__( 'Somoscuatro Custom Blocks', 'sc-starter-theme' ),
+					'title' => esc_html__( 'Somoscuatro Custom Blocks', 'tetra-starter-wordpress-theme' ),
 				),
 			)
 		);

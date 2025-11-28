@@ -25,7 +25,7 @@ const Template = (args) => {
 export const Default = Template.bind({});
 Default.args = {
 	site: {
-		title: 'Somoscuatro Starter Theme',
+		title: 'TetraStarter WordPress Theme',
 	},
 	nav_items: [
 		{

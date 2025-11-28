@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\Translation Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
@@ -24,6 +24,6 @@ class Translation {
 	 */
 	#[Action( 'after_setup_theme' )]
 	public function load_text_domain(): void {
-		load_theme_textdomain( 'sc-starter-theme', $this->get_base_path() . '/languages' );
+		load_theme_textdomain( 'tetra-starter-wordpress-theme', $this->get_base_path() . '/languages' );
 	}
 }

@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\Customizer Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
@@ -27,7 +27,7 @@ class Customizer {
 		$wp_customize->add_section(
 			'gtm',
 			array(
-				'title'      => __( 'Google Tag Manager', 'sc-starter-theme' ),
+				'title'      => __( 'Google Tag Manager', 'tetra-starter-wordpress-theme' ),
 				'priority'   => 35,
 				'capability' => 'edit_theme_options',
 			)
@@ -45,7 +45,7 @@ class Customizer {
 				$wp_customize,
 				'gtm_id',
 				array(
-					'label'    => __( 'GTM ID', 'sc-starter-theme' ),
+					'label'    => __( 'GTM ID', 'tetra-starter-wordpress-theme' ),
 					'section'  => 'gtm',
 					'settings' => 'gtm_id',
 					'type'     => 'text',

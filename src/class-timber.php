@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\Timber Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
@@ -59,7 +59,7 @@ class Timber {
 		$context['copyright_text'] = sprintf(
 			'&copy;%s %s %s',
 			gmdate( 'Y' ),
-			__( 'Starter Theme by', 'sc-starter-theme' ),
+			__( 'Starter Theme by', 'tetra-starter-wordpress-theme' ),
 			'<a class="underline" href="https://somoscuatro.es">somoscuatro</a>'
 		);
 

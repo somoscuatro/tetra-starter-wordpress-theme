@@ -6,7 +6,7 @@
           "/**",
           " * Contains Somoscuatro\\Starter_Theme\\\\$1${TM_FILENAME_BASE/(class-)?([^.-]+)|(-)/${2:/capitalize}/g}.",
           " *",
-          " * @package sc-starter-theme",
+          " * @package tetra-starter-wordpress-theme",
           " */",
           "",
           "declare(strict_types=1);",

@@ -2,7 +2,7 @@
 /**
  * Setup PHP Class Autoload.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);

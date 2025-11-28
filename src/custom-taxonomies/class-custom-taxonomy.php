@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\Custom_Taxonomies\Custom_Taxonomy Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
@@ -65,14 +65,14 @@ class Custom_Taxonomy {
 		$labels = array(
 			'name'              => $this->plural_name,
 			'singular_name'     => $this->singular_name,
-			'search_items'      => sprintf( __( 'Search %s', 'sc-starter-theme' ), $this->plural_name ),
-			'all_items'         => sprintf( __( 'All %s', 'sc-starter-theme' ), $this->plural_name ),
-			'parent_item'       => sprintf( __( 'Parent %s', 'sc-starter-theme' ), $this->singular_name ),
-			'parent_item_colon' => sprintf( __( 'Parent %s', 'sc-starter-theme' ), $this->singular_name ),
-			'edit_item'         => sprintf( __( 'Edit %s', 'sc-starter-theme' ), $this->singular_name ),
-			'update_item'       => sprintf( __( 'Update %s', 'sc-starter-theme' ), $this->singular_name ),
-			'add_new_item'      => sprintf( __( 'Add New %s', 'sc-starter-theme' ), $this->singular_name ),
-			'new_item_name'     => sprintf( __( 'New %s', 'sc-starter-theme' ), $this->singular_name ),
+			'search_items'      => sprintf( __( 'Search %s', 'tetra-starter-wordpress-theme' ), $this->plural_name ),
+			'all_items'         => sprintf( __( 'All %s', 'tetra-starter-wordpress-theme' ), $this->plural_name ),
+			'parent_item'       => sprintf( __( 'Parent %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
+			'parent_item_colon' => sprintf( __( 'Parent %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
+			'edit_item'         => sprintf( __( 'Edit %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
+			'update_item'       => sprintf( __( 'Update %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
+			'add_new_item'      => sprintf( __( 'Add New %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
+			'new_item_name'     => sprintf( __( 'New %s', 'tetra-starter-wordpress-theme' ), $this->singular_name ),
 			'menu_name'         => $this->plural_name,
 		);
 		// phpcs:enable WordPress.WP.I18n.MissingTranslatorsComment

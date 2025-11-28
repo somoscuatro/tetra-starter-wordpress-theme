@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\Theme Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
@@ -87,7 +87,7 @@ class Theme {
 					echo wp_kses_post(
 						sprintf(
 							/* translators: %s plugin name and link to plugin vendor page. */
-							__( '%s plugin is not installed. Please install the plugin to use the Somoscuatro Starter Theme.', 'sc-starter-theme' ),
+							__( '%s plugin is not installed. Please install the plugin to use the TetraStarter WordPress Theme.', 'tetra-starter-wordpress-theme' ),
 							'<a href="https://www.advancedcustomfields.com/" target="_blank">Advanced Custom Fields (ACF)</a>'
 						)
 					);

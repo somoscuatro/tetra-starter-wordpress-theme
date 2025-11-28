@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\ACF Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);

@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\Attributes\Hook Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 namespace Somoscuatro\Starter_Theme\Attributes;

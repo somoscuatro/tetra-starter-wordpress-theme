@@ -2,7 +2,7 @@
 /**
  * Contains Somoscuatro\Starter_Theme\CLI\Commands\Export_ACF_Blocks_Fields Class.
  *
- * @package sc-starter-theme
+ * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
