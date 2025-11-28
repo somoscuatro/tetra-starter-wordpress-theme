@@ -39,7 +39,7 @@
 		"postcss": "^8.5.6",
 		"postcss-extend": "^1.0.5",
 		"postcss-import": "^16.1.1",
-		"postcss-nesting": "^12.1.0",
+		"postcss-nesting": "^13.0.2",
 		"tailwindcss": "^3.4.1",
 		"webpack": "^5.91.0"
 	},
