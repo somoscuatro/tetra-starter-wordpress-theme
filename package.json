@@ -8,10 +8,9 @@
 		"url": "https://somoscuatro.es"
 	},
 	"scripts": {
-		"dev": "bun x mix watch",
+		"dev": "vite",
 		"dev:storybook": "storybook dev -p 6006",
-		"build": "bun x mix build",
-		"build:prod": "bun x mix --production",
+		"build": "vite build",
 		"build:storybook": "storybook build",
 		"run:chromatic": "bun x chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --build-script-name=build:storybook",
 		"deploy:storybook": "bun x dotenv-run-script run:chromatic",
