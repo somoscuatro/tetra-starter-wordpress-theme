@@ -34,10 +34,6 @@
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.22",
-		"postcss": "^8.5.6",
-		"postcss-extend": "^1.0.5",
-		"postcss-import": "^16.1.1",
-		"postcss-nesting": "^13.0.2",
 		"tailwindcss": "^4.1.17"
 	},
 	"devDependencies": {
