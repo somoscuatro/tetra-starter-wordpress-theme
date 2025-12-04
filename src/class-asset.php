@@ -47,7 +47,7 @@ class Asset {
 		// @phpcs:disable WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
 
 		// Custom Fonts.
-		wp_enqueue_style( $theme_prefix . '-fonts-preload', $this->vite('assets/styles/fonts.css'), false);
+		wp_enqueue_style( $theme_prefix . '-fonts-preload', $this->vite( 'assets/styles/fonts.css' ), false );
 
 		// Theme Styles.
 		wp_enqueue_style( $theme_prefix . '-main-styles', $this->vite( 'assets/styles/main.css' ), array( $theme_prefix . '-fonts-preload' ) );

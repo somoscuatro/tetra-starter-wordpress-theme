@@ -1,5 +1,5 @@
-<section class="{{ background ? 'bg-' ~ background : '' }} {{ section_classes }}" {{ block.anchor ? "id='" ~ block.anchor ~ "'" : '' }}>
-	<div class="section-container container py-10 md:py-20 {{ section_container_classes }}"> 
+<section class="{{ background ? 'bg-' ~ background : '' }} {{ foreground ? 'text-' ~ foreground : '' }} {{ section_classes }}" {{ block.anchor ? "id='" ~ block.anchor ~ "'" : '' }}>
+	<div class="section-container container mx-auto py-10 md:py-20 {{ section_container_classes }}">
 		{% block section_content %}
 		{% endblock %}
 	</div>

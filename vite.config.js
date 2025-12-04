@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
 export default defineConfig({
@@ -16,6 +17,7 @@ export default defineConfig({
 	resolve: {
 		extensions: ['.ts', '.js'],
 	},
+	plugins: [tailwindcss()],
 	build: {
 		manifest: true,
 		outDir: 'dist',
