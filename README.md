@@ -8,8 +8,7 @@ This theme leverages the power of [Advanced Custom Fields
 integrates [Twig](https://twig.symfony.com/) via
 [Timber](https://upstatement.com/timber/) for efficient template management, and
 utilizes [Tailwind CSS](https://tailwindcss.com/) for its modern and responsive
-styling capabilities. Additionally, it incorporates [Vite](https://vite.dev/), a wrapper for easily defining
-[Webpack](https://webpack.js.org/) build steps and efficiently compile assets.
+styling capabilities. Additionally, it incorporates [Vite](https://vite.dev/) to efficiently compile assets.
 Furthermore, the theme supports [Storybook](https://storybook.js.org/), a tool
 for developing UI components in isolation, which enhances the design system and
 facilitates a more interactive component library.
@@ -21,16 +20,16 @@ facilitates a more interactive component library.
 **Key Features:**
 
 - Custom Gutenberg Blocks: Build unique and complex content layouts with ease
-	using ACF.
+  using ACF.
 - Twig Templating: Write maintainable and cleaner code with the power of Twig
-	and Timber.
+  and Timber.
 - Responsive Design: Achieve a consistent look across all devices with Tailwind
-	CSS.
+  CSS.
 - TypeScript Integration: Enhance code reliability and maintainability with
-	strong typing through TypeScript support.
+  strong typing through TypeScript support.
 - Assets Compilation: Simplify your assets management with Vite.
 - Storybook Integration: Develop and test UI components in isolation and
-	checking them using Storybook interactive environment.
+  checking them using Storybook interactive environment.
 
 ## Prerequisites
 
@@ -42,7 +41,7 @@ please ensure that your system meets the following requirements:
 - [Node.js](https://nodejs.org/en): Version 24 or higher
 - [bun](https://bun.sh/): Version 1.3 or higher
 - [GitHub CLI](https://cli.github.com/): Version 2.83 or higher (optional, necessary
-	for [deployment scripts](#automated-deployment) to work)
+  for [deployment scripts](#automated-deployment) to work)
 
 ### Quick Start with Docker
 
@@ -59,40 +58,43 @@ your WordPress site:
 
 1. **Clone the Repository:**
 
-	 Begin by cloning the repository into your WordPress themes directory. Open
-	 your terminal, navigate to the `wp-content/themes` folder of your WordPress
-	 installation, and run the following command:
+    Begin by cloning the repository into your WordPress themes directory. Open
+    your terminal, navigate to the `wp-content/themes` folder of your WordPress
+    installation, and run the following command:
 
-	 `git clone git@github.com:somoscuatro/tetra-starter-wordpress-theme.git`
+    `git clone git@github.com:somoscuatro/tetra-starter-wordpress-theme.git`
 
-	 After cloning, switch to the theme's directory:
+    After cloning, switch to the theme's directory:
 
-	 `cd tetra-starter-wordpress-theme`
+    `cd tetra-starter-wordpress-theme`
+
 1. **Install Dependencies:**
 
-	 Install the required Node.js and PHP dependencies by running:
+    Install the required Node.js and PHP dependencies by running:
 
-	 `bun install && composer install`
+    `bun install && composer install`
 
-	 This will set up all necessary packages for the theme to function correctly.
+    This will set up all necessary packages for the theme to function correctly.
+
 1. **Build Assets:**
 
-	 Compile the static assets such as CSS and JavaScript files with:
+    Compile the static assets such as CSS and JavaScript files with:
 
-	 `bun run build`
+    `bun run build`
 
-	 This command processes your assets using Vite and prepares them for
-	 production use.
+    This command processes your assets using Vite and prepares them for
+    production use.
+
 1. **Activate the Theme:**
 
-	 To activate the theme on your WordPress site, you can use the WP CLI with the
-	 following command:
+    To activate the theme on your WordPress site, you can use the WP CLI with the
+    following command:
 
-	 `wp theme activate tetra-starter-wordpress-theme`
+    `wp theme activate tetra-starter-wordpress-theme`
 
-	 Alternatively, you can activate the theme manually by going to the WordPress
-	 admin dashboard, navigating to _Appearance_ > _Themes_, and clicking the
-	 _Activate_ button for the TetraStarter WordPress Theme.
+    Alternatively, you can activate the theme manually by going to the WordPress
+    admin dashboard, navigating to _Appearance_ > _Themes_, and clicking the
+    _Activate_ button for the TetraStarter WordPress Theme.
 
 Enjoy your new theme! To learn how to further customize and extend it, keep on
 reading.
@@ -120,46 +122,39 @@ The TetraStarter WordPress Theme is organized into several directories, each
 serving a specific purpose in the theme's architecture:
 
 - `assets`: This directory houses all the static resources used by the theme.
-	- `fonts`: Contains custom fonts files. See [How to Customize
-		Fonts](#how-to-customize-fonts) section.
-	- `images`: Stores static images that are integral to the theme's
-		construction. Place assets such as favicons or any other images that you
-		prefer to manage directly within the theme, rather than through the WordPress
-		Media Uploader, here.
-	- `scripts`: Holds the JavaScript files that add interactive functionality to
-		your theme.
-	- `styles`: Contains all the Tailwind CSS and custom style files that define
-		the visual appearance of your theme.
+    - `fonts`: Contains custom fonts files. See [How to Customize
+      Fonts](#how-to-customize-fonts) section.
+    - `images`: Stores static images that are integral to the theme's
+      construction. Place assets such as favicons or any other images that you
+      prefer to manage directly within the theme, rather than through the WordPress
+      Media Uploader, here.
+    - `scripts`: Holds the JavaScript files that add interactive functionality to
+      your theme.
+    - `styles`: Contains all the Tailwind CSS and custom style files that define
+      the visual appearance of your theme.
 - `languages`: This directory contains the translation files. See
-	[Translations](#translations) section.
-- `patches`: Sometimes, third-party libraries require modifications to work
-	seamlessly with our theme. This directory contains such modifications, or
-	"patches." For example, we include a patch to ensure [WP CLI
-	Stubs](https://github.com/php-stubs/wp-cli-stubs) are compatible with PHP 8.2.
-	These patches are automatically applied when you run `composer install`. For
-	details on how these patches are implemented, refer to the `post-install-cmd`
-	script within the `composer.json` file.
+  [Translations](#translations) section.
 - `src`: Serving as the primary namespace for the theme, this directory contains
-	all the core logic, neatly organized into distinct classes.
-	- `attributes`: This subdirectory houses the mechanism for registering
-		WordPress hooks using PHP method attributes. Within, the `hooked-classes.php`
-		file enumerates classes that have methods designed to handle WordPress hooks.
-	- `blocks`: Custom Gutenberg blocks are stored here, each in its own dedicated
-		folder for better organization. See [How to Create Gutenberg
-		Blocks](#how-to-create-gutenberg-blocks) section.
-	- `cli`: This is where we implement custom WP-CLI commands, extending the
-		command-line interface capabilities for WordPress.
-	- `custom-post-types`: Definitions and configurations for WordPress Custom
-		Post Types are located in this subdirectory. See [How to Add Custom Post
-		Types](#how-to-add-custom-post-types) section.
-	- `custom-taxonomies`: Similarly, this subdirectory is dedicated to the
-		definition of WordPress Custom Taxonomies. See [How to Add Custom
-		Taxonomies](#how-to-add-custom-taxonomies) section.
-	- `helpers`: A collection of generic utility methods implemented as PHP Traits
-		can be found here. An example includes a method for retrieving the last
-		modified time of a file.
+  all the core logic, neatly organized into distinct classes.
+    - `attributes`: This subdirectory houses the mechanism for registering
+      WordPress hooks using PHP method attributes. Within, the `hooked-classes.php`
+      file enumerates classes that have methods designed to handle WordPress hooks.
+    - `blocks`: Custom Gutenberg blocks are stored here, each in its own dedicated
+      folder for better organization. See [How to Create Gutenberg
+      Blocks](#how-to-create-gutenberg-blocks) section.
+    - `cli`: This is where we implement custom WP-CLI commands, extending the
+      command-line interface capabilities for WordPress.
+    - `custom-post-types`: Definitions and configurations for WordPress Custom
+      Post Types are located in this subdirectory. See [How to Add Custom Post
+      Types](#how-to-add-custom-post-types) section.
+    - `custom-taxonomies`: Similarly, this subdirectory is dedicated to the
+      definition of WordPress Custom Taxonomies. See [How to Add Custom
+      Taxonomies](#how-to-add-custom-taxonomies) section.
+    - `helpers`: A collection of generic utility methods implemented as PHP Traits
+      can be found here. An example includes a method for retrieving the last
+      modified time of a file.
 - `templates`: This directory is home to the Twig templates used by the theme.
-	- `parts`: Here, you'll find reusable template partials.
+    - `parts`: Here, you'll find reusable template partials.
 
 ### Class Autoloading
 
@@ -189,95 +184,95 @@ To use method attributes in your class methods, follow these steps:
 
 1. **Define Your Class Method:**
 
-	 Write the method that you intend to use as a hook handler. For instance:
+    Write the method that you intend to use as a hook handler. For instance:
 
-	 ```php
-		// src/class-my-beautiful-class.php
+    ```php
+    // src/class-my-beautiful-class.php
 
-		namespace Somoscuatro\Tetra_Starter_Theme;
+    namespace Somoscuatro\Tetra_Starter_Theme;
 
-		class My_Beautiful_Class {
+    class My_Beautiful_Class {
 
-			public function my_beautiful_method(): void {
-				// Your code here
-			}
-		}
-	 ```
+      public function my_beautiful_method(): void {
+        // Your code here
+      }
+    }
+    ```
 
 1. **Register the Method as a Hook Handler:**
 
-	 Apply the method attribute to register it as a handler for a WordPress action
-	 or filter. Here's how you would register a method for the `after_setup_theme`
-	 action:
+    Apply the method attribute to register it as a handler for a WordPress action
+    or filter. Here's how you would register a method for the `after_setup_theme`
+    action:
 
-	 ```php
-		// src/class-my-beautiful-class.php
+    ```php
+      // src/class-my-beautiful-class.php
 
-		namespace Somoscuatro\Tetra_Starter_Theme;
+      namespace Somoscuatro\Tetra_Starter_Theme;
 
-		use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
+      use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
 
-		class My_Beautiful_Class {
+      class My_Beautiful_Class {
 
-			#[Action('after_setup_theme')]
-			public function my_beautiful_method(): void {
-				// Your code here
-			}
-		}
-	 ```
+        #[Action('after_setup_theme')]
+        public function my_beautiful_method(): void {
+          // Your code here
+        }
+      }
+    ```
 
-	 Similarly, for a filter like `body_class`, you would write:
+    Similarly, for a filter like `body_class`, you would write:
 
-	 ```php
-		// src/class-my-beautiful-class.php
+    ```php
+      // src/class-my-beautiful-class.php
 
-		namespace Somoscuatro\Tetra_Starter_Theme;
+      namespace Somoscuatro\Tetra_Starter_Theme;
 
-		use Somoscuatro\Tetra_Starter_Theme\Attributes\Filter;
+      use Somoscuatro\Tetra_Starter_Theme\Attributes\Filter;
 
-		class My_Beautiful_Class {
+      class My_Beautiful_Class {
 
-			#[Filter('body_class')]
-			public function my_beautiful_method(array $classes): array {
-				// Your code here
+        #[Filter('body_class')]
+        public function my_beautiful_method(array $classes): array {
+          // Your code here
 
-				return $classes;
-			}
-		}
-	 ```
+          return $classes;
+        }
+      }
+    ```
 
 1. **Specify Priority and Accepted Arguments (Optional):**
 
-	 You can also define the priority of the hook and the number of accepted
-	 arguments like this:
+    You can also define the priority of the hook and the number of accepted
+    arguments like this:
 
-	 ```php
-	 #[Filter('style_loader_tag', priority: 20, accepted_args: 2)]
-	 ```
+    ```php
+      #[Filter('style_loader_tag', priority: 20, accepted_args: 2)]
+    ```
 
-	 If not explicitly stated, the default priority is set to 10, and the number
-	 of accepted arguments is 1.
+    If not explicitly stated, the default priority is set to 10, and the number
+    of accepted arguments is 1.
 
-	 Please note that class methods linked to hooks must be public to ensure
-	 WordPress can call them correctly.
+    Please note that class methods linked to hooks must be public to ensure
+    WordPress can call them correctly.
 
 1. **Register Hooked Classes in hooked-classes.php:**
 
-	 To activate the hooked methods, you must register the class containing them
-	 in the `hooked-classes.php` file. This step is essential to automatically
-	 attach your methods to the specified WordPress hooks. Add your class to the
-	 list as shown below:
+    To activate the hooked methods, you must register the class containing them
+    in the `hooked-classes.php` file. This step is essential to automatically
+    attach your methods to the specified WordPress hooks. Add your class to the
+    list as shown below:
 
-	 	```php
-			 // hooked-classes.php
+    ```php
+      // hooked-classes.php
 
-			 use Somoscuatro\Tetra_Starter_Theme\My_Beautiful_Class;
+      use Somoscuatro\Tetra_Starter_Theme\My_Beautiful_Class;
 
-			 return [
-				 // Other classes
-				 My_Beautiful_Class::class,
-			 ];
-		 ```
+      return [
+        // Other classes
+        My_Beautiful_Class::class,
+      ];
+    ```
 
 ## How to Customize Fonts
 
@@ -290,60 +285,63 @@ To integrate your custom fonts into the theme, follow these steps:
 
 1. **Add Your Fonts:**
 
-	 Download your chosen fonts and place them in the `assets/fonts` directory.
-	 For the best balance of efficiency and compatibility, we recommend using the
-	 WOFF2 format.
+    Download your chosen fonts and place them in the `assets/fonts` directory.
+    For the best balance of efficiency and compatibility, we recommend using the
+    WOFF2 format.
 
 1. **Preload Your Fonts:**
 
-	 Improve your site's performance by preloading your fonts. In the
-	 `templates/partials/head.twig` file, insert a preload link for each font. For
-	 example:
+    Improve your site's performance by preloading your fonts. In the
+    `templates/partials/head.twig` file, insert a preload link for each font. For
+    example:
 
-	  ```html
-		<link rel="preload" href="{{ get_static_asset('dist/fonts/my-beautiful-font.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
-		```
+    ```html
+    <link
+      rel="preload"
+      href="{{ get_static_asset('dist/fonts/my-beautiful-font.woff2') }}"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    ```
 
-	 For a deeper understanding of preloading strategies, consider reading [this
-	 informative blog post by
-	 Google](https://web.dev/articles/codelab-preload-web-fonts).
+    For a deeper understanding of preloading strategies, consider reading [this
+    informative blog post by
+    Google](https://web.dev/articles/codelab-preload-web-fonts).
 
 1. **Define Font-Face:**
 
-	 Declare your font in `assets/styles/fonts.css` using the `@font-face` rule to
-	 specify the font family, style, weight, and file source. Here's an example:
+    Declare your font in `assets/styles/fonts.css` using the `@font-face` rule to
+    specify the font family, style, weight, and file source. Here's an example:
 
-	  ```css
-		@supports (font-variation-settings: normal) {
-			@font-face {
-				font-family: 'My Beautiful Font';
-				font-style: normal;
-				font-weight: 300 700;
-				font-display: swap;
-				src: url(/wp-content/themes/tetra-starter-wordpress-theme/dist/fonts/my-beautiful-font.woff2) format("woff2");
-			}
-		}
-		```
+    ```css
+    @supports (font-variation-settings: normal) {
+      @font-face {
+        font-family: 'My Beautiful Font';
+        font-style: normal;
+        font-weight: 300 700;
+        font-display: swap;
+        src: url(../fonts/my-beautiful-font.woff2) format('woff2');
+      }
+    }
+    ```
 
 1. **Configure Tailwind:**
 
-	 Let Tailwind CSS know about your new font by updating the
-	 `tailwind.config.js` file. Add your font to the `extend` section under
-	 `fontFamily`. Here's how you can do it:
+    Let Tailwind CSS know about your new font by updating the
+    `assets/styles/theme/_fonts.css` file. Here's how you can do it:
 
-	 ```js
-	 extend: {
-		 fontFamily: {
-			 'myBeautifulFont': ['My Beautiful Font', 'Helvetica Neue', 'Arial', 'sans-serif'],
-		 },
-	 }
-	 ```
+    ```css
+    @theme {
+      --font-my-beautiful-font: 'My Beautiful Font', 'Helvetica Neue', 'Arial', 'sans-serif';
+    }
+    ```
 
 1. **Apply Your Font:**
 
-	 Now you can use your custom font throughout the theme by applying the
-	 Tailwind class `font-my-beautiful-font` wherever you want your font to
-	 appear.
+    Now you can use your custom font throughout the theme by applying the
+    Tailwind class `font-my-beautiful-font` wherever you want your font to
+    appear.
 
 ## How to Customize Color Palette
 
@@ -353,26 +351,34 @@ design preferences, follow these steps:
 
 1. **Modify Tailwind Colors Palette:**
 
-	 Update your custom color palette by adding your desired HEX codes to the
-	 `tailwind.colors.json` file. This file dictates the color scheme used
-	 throughout the theme via Tailwind CSS.
+    Update your custom color palette by adding your desired HEX codes to the
+    `assets/styles/theme/_colors.css` file. This file dictates the color scheme used
+    throughout the theme via Tailwind CSS.
 
 1. **Update ACF Color Picker Options (optional):**
 
-	 If you wish to have your new colors available as options within the Advanced
-	 Custom Fields (ACF) Color Picker, you'll need to edit the
-	 `tailwind.bg-colors-safelist.json` file.
+    If you wish to have your new colors available as options within the Advanced
+    Custom Fields (ACF) Color Picker, you'll need to mark the colors as safe.
 
-	 The contents of this file are automatically included in the Tailwind CSS
-	 safelist to ensure that your custom colors are available for use in
-	 Tailwind's utility classes. Additionally, these colors are utilized by [the
-	 ACF
-	 class](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/main/src/class-acf.php)
-	 to populate the color picker options within the WordPress admin.
+    To do this, add the prefix `--safe-color` to the CSS variable names of the colors
+    you want to include in the ACF Color Picker. You can also use `--safe-light-color` and
+    `--safe-dark-color` for light and dark color variants, to ensure a correct color contrast
+    between text and background.
 
-By customizing these JSON files, you can easily extend the theme's color palette
-and ensure that your chosen colors are readily available for both your Tailwind
-CSS classes and the ACF Color Picker.
+    For example:
+
+    ```css
+      --safe-color-folly-700: var(--color-folly-700);
+      --safe-color-anti-flash-white-100: var(--color-anti-flash-white-100);
+      --safe-color-anti-flash-white-200: var(--color-anti-flash-white-200);
+
+      --safe-dark-color-folly-700: var(--color-folly-700);
+      --safe-light-color-anti-flash-white-100: var(--color-anti-flash-white-100);
+    ```
+
+    Tailwind CSS and Vite are not able to understand classes that are dynamically
+    added by PHP. To ensure the colors are compiled, add them to the Tailwind CSS
+    safelist using `@source` as documented by [the Tailwind CSS docs](https://tailwindcss.com/docs/detecting-classes-in-source-files#safelisting-variants).
 
 ## How to Create Gutenberg Blocks
 
@@ -381,68 +387,68 @@ steps outlined below:
 
 1. **Initialize a New Block Directory:**
 
-	 Begin by creating a new folder within the `src/blocks` directory. Name it to
-	 reflect your block's purpose, such as `my-beautiful-block`.
+    Begin by creating a new folder within the `src/blocks` directory. Name it to
+    reflect your block's purpose, such as `my-beautiful-block`.
 
 1. **Create the ACF `block.json` File:**
 
-	 The `block.json` file serves as the cornerstone for defining a Gutenberg
-	 block's metadata. It provides essential details about the block, such as its
-	 name, icon, category, and other characteristics. To gain a comprehensive
-	 understanding of the `block.json` structure and its role in block creation,
-	 consult [the WordPress Developer Resources page on
-	 block.json](https://developer.wordpress.org/block-editor/getting-started/fundamentals/block-json/).
+    The `block.json` file serves as the cornerstone for defining a Gutenberg
+    block's metadata. It provides essential details about the block, such as its
+    name, icon, category, and other characteristics. To gain a comprehensive
+    understanding of the `block.json` structure and its role in block creation,
+    consult [the WordPress Developer Resources page on
+    block.json](https://developer.wordpress.org/block-editor/getting-started/fundamentals/block-json/).
 
-	 A critical attribute within `block.json` is the `renderCallback`. This
-	 attribute should be set to reference the PHP class responsible for rendering
-	 the block (see step 3 below).
+    A critical attribute within `block.json` is the `renderCallback`. This
+    attribute should be set to reference the PHP class responsible for rendering
+    the block (see step 3 below).
 
-	 Check [the block.json of the sample
-	 block](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/main/src/blocks/sample/block.json)
-	 included in the theme for guidance.
+    Check [the block.json of the sample
+    block](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/main/src/blocks/sample/block.json)
+    included in the theme for guidance.
 
-	 Please be aware that when naming your block, it is essential to use the
-	 prefix `acf/` to ensure that Advanced Custom Fields correctly recognizes and
-	 interprets your block. For example, if your block is named
-	 `my-beautiful-block`, the full name in the `block.json` should be
-	 `acf/my-beautiful-block`.
+    Please be aware that when naming your block, it is essential to use the
+    prefix `acf/` to ensure that Advanced Custom Fields correctly recognizes and
+    interprets your block. For example, if your block is named
+    `my-beautiful-block`, the full name in the `block.json` should be
+    `acf/my-beautiful-block`.
 
 1. **Create the Block's Main Class:**
 
-	 For our given example, you would create a PHP file named
-	 `class-my-beautiful-block.php`. This file should define a class named
-	 `My_Beautiful_Block`. This class acts as the foundation for your block's
-	 functionality. It must include the `get_acf_fields` method, which is
-	 responsible for specifying the ACF fields that will appear in the WordPress
-	 admin interface for your block.
+    For our given example, you would create a PHP file named
+    `class-my-beautiful-block.php`. This file should define a class named
+    `My_Beautiful_Block`. This class acts as the foundation for your block's
+    functionality. It must include the `get_acf_fields` method, which is
+    responsible for specifying the ACF fields that will appear in the WordPress
+    admin interface for your block.
 
-	 Check [the class-sample.php of the sample
-	 block](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/main/src/blocks/sample/class-sample.php)
-	 included in the theme for guidance.
+    Check [the class-sample.php of the sample
+    block](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/main/src/blocks/sample/class-sample.php)
+    included in the theme for guidance.
 
-	 You can use the ACF interface to design your custom fields group, and when
-	 ready, export it as PHP code directly from the _ACF_ > _Tools_ section in
-	 your WordPress dashboard. After exporting, integrate the PHP code into the
-	 `get_acf_fields` method of your custom block or theme functions.
+    You can use the ACF interface to design your custom fields group, and when
+    ready, export it as PHP code directly from the _ACF_ > _Tools_ section in
+    your WordPress dashboard. After exporting, integrate the PHP code into the
+    `get_acf_fields` method of your custom block or theme functions.
 
-	 Remember to deactivate or delete the original field group in the ACF
-	 interface. This will prevent the possibility of duplicate fields appearing
-	 and ensures that your fields are managed solely through code.
+    Remember to deactivate or delete the original field group in the ACF
+    interface. This will prevent the possibility of duplicate fields appearing
+    and ensures that your fields are managed solely through code.
 
-	 For detailed guidance on registering your fields through PHP, read [this ACF
-	 documentation
-	 page](https://www.advancedcustomfields.com/resources/register-fields-via-php/).
+    For detailed guidance on registering your fields through PHP, read [this ACF
+    documentation
+    page](https://www.advancedcustomfields.com/resources/register-fields-via-php/).
 
 1. **Create the Block's Template:**
 
-	 Create your block's layout by creating a file named `template.twig`. As for
-	 any other template in the theme, you can utilize Twig and Tailwind CSS in
-	 block templates.
+    Create your block's layout by creating a file named `template.twig`. As for
+    any other template in the theme, you can utilize Twig and Tailwind CSS in
+    block templates.
 
-	 Within this template, you can access the ACF fields directly without the need
-	 to include the block prefix. For instance, if you have a field defined with
-	 the key `field_block_my_beautiful_block_heading`, it will be accessible in
-	 the Twig template simply as `heading` (i.e. `<p>{{ heading }}</p>`).
+    Within this template, you can access the ACF fields directly without the need
+    to include the block prefix. For instance, if you have a field defined with
+    the key `field_block_my_beautiful_block_heading`, it will be accessible in
+    the Twig template simply as `heading` (i.e. `<p>{{ heading }}</p>`).
 
 To have a complete example of what explained above, have a look to [the sample
 block included with the
@@ -581,20 +587,20 @@ This theme applies several improvements to ensure top performance, implemented
 in `src/class-performance.php`:
 
 - [Possibility of preloading
-	assets](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/44b164f1d500e48760bc9a10a546016bf8bb8e1a/src/class-performance.php#L57C2-L63C3).
-	To use it, simply add a `-preload` suffix to your assets handle name. For
-	example:
+  assets](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/44b164f1d500e48760bc9a10a546016bf8bb8e1a/src/class-performance.php#L57C2-L63C3).
+  To use it, simply add a `-preload` suffix to your assets handle name. For
+  example:
 
-	```php
-	wp_enqueue_style( 'tetra-starter-wordpress-theme-fonts-preload', $this->get_base_url() . '/dist/styles/fonts.css', false, $this->get_filemtime( 'styles/fonts.css' ) );
-	```
+    ```php
+    wp_enqueue_style( 'tetra-starter-wordpress-theme-fonts-preload', $this->get_base_url() . '/dist/styles/fonts.css', false );
+    ```
 
 - [Remove non-essential WordPress default
-	assets](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/44b164f1d500e48760bc9a10a546016bf8bb8e1a/src/class-performance.php#L24-L45)
+  assets](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/44b164f1d500e48760bc9a10a546016bf8bb8e1a/src/class-performance.php#L24-L45)
 - [Possibility of removing unused WordPress default
-	blocks](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/44b164f1d500e48760bc9a10a546016bf8bb8e1a/src/class-gutenberg.php#L51C2-L63C1)
+  blocks](https://github.com/somoscuatro/tetra-starter-wordpress-theme/blob/44b164f1d500e48760bc9a10a546016bf8bb8e1a/src/class-gutenberg.php#L51C2-L63C1)
 - Selective enqueueing of custom blocks assets, as explained in section [Include
-	Block's Assets](#include-blocks-assets).
+  Block's Assets](#include-blocks-assets).
 
 ## Code Standards
 
