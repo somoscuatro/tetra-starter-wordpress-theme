@@ -1,0 +1,76 @@
+@theme {
+	--color-folly-100: #ffebf1;
+	--color-folly-200: #ffc2d6;
+	--color-folly-300: #ff99bb;
+	--color-folly-400: #ff70a0;
+	--color-folly-500: #ff4785;
+	--color-folly-600: #f50056;
+	--color-folly-700: #e0004b;
+	--color-folly-800: #b8003d;
+	--color-folly-900: #7a0029;
+
+	--color-yellow-green-100: #f9fcee;
+	--color-yellow-green-200: #ecf6cb;
+	--color-yellow-green-300: #dfefa9;
+	--color-yellow-green-400: #d2e986;
+	--color-yellow-green-500: #c5e364;
+	--color-yellow-green-600: #add729;
+	--color-yellow-green-700: #99be23;
+	--color-yellow-green-800: #7e9b1c;
+	--color-yellow-green-900: #546713;
+
+	--color-turquoise-100: #ebfffe;
+	--color-turquoise-200: #c2fffd;
+	--color-turquoise-300: #99fffc;
+	--color-turquoise-400: #70fffa;
+	--color-turquoise-500: #47fff9;
+	--color-turquoise-600: #00ded8;
+	--color-turquoise-700: #00b8b1;
+	--color-turquoise-800: #008f8a;
+	--color-turquoise-900: #00524f;
+
+	--color-crayola-100: #edf3fd;
+	--color-crayola-200: #c9dcf8;
+	--color-crayola-300: #a5c4f3;
+	--color-crayola-400: #5d95ea;
+	--color-crayola-500: #2f76e4;
+	--color-crayola-600: #1c68d9;
+	--color-crayola-700: #1756b5;
+	--color-crayola-800: #134590;
+	--color-crayola-900: #0e346c;
+
+	--color-school-bus-yellow-100: #fffceb;
+	--color-school-bus-yellow-200: #fff7c2;
+	--color-school-bus-yellow-300: #fff199;
+	--color-school-bus-yellow-400: #ffec70;
+	--color-school-bus-yellow-500: #ffe747;
+	--color-school-bus-yellow-600: #ffdc00;
+	--color-school-bus-yellow-700: #e0c200;
+	--color-school-bus-yellow-800: #b89f00;
+	--color-school-bus-yellow-900: #7a6a00;
+
+	--color-anti-flash-white-100: #ffffff;
+	--color-anti-flash-white-200: #f3f4f6;
+	--color-anti-flash-white-300: #e5e7eb;
+	--color-anti-flash-white-400: #d1d5db;
+	--color-anti-flash-white-500: #9ca3af;
+	--color-anti-flash-white-600: #6b7280;
+	--color-anti-flash-white-700: #4b5563;
+	--color-anti-flash-white-800: #374151;
+	--color-anti-flash-white-900: #000000;
+
+	--safe-color-folly-700: var(--color-folly-700);
+	--safe-color-crayola-600: var(--color-crayola-600);
+	--safe-color-school-bus-yellow-600: var(--color-school-bus-yellow-600);
+	--safe-color-anti-flash-white-100: var(--color-anti-flash-white-100);
+	--safe-color-anti-flash-white-200: var(--color-anti-flash-white-200);
+
+	--safe-dark-color-folly-700: var(--color-folly-700);
+	--safe-dark-color-crayola-600: var(--color-crayola-600);
+
+	--safe-light-color-school-bus-yellow-600: var(
+		--color-school-bus-yellow-600
+	);
+	--safe-light-color-anti-flash-white-100: var(--color-anti-flash-white-100);
+	--safe-light-color-anti-flash-white-200: var(--color-anti-flash-white-200);
+}

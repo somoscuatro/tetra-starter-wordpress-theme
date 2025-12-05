@@ -8,8 +8,7 @@ This theme leverages the power of [Advanced Custom Fields
 integrates [Twig](https://twig.symfony.com/) via
 [Timber](https://upstatement.com/timber/) for efficient template management, and
 utilizes [Tailwind CSS](https://tailwindcss.com/) for its modern and responsive
-styling capabilities. Additionally, it incorporates [Laravel
-Mix](https://laravel-mix.com/), a wrapper for easily defining
+styling capabilities. Additionally, it incorporates [Vite](https://vite.dev/), a wrapper for easily defining
 [Webpack](https://webpack.js.org/) build steps and efficiently compile assets.
 Furthermore, the theme supports [Storybook](https://storybook.js.org/), a tool
 for developing UI components in isolation, which enhances the design system and
@@ -29,8 +28,7 @@ facilitates a more interactive component library.
 	CSS.
 - TypeScript Integration: Enhance code reliability and maintainability with
 	strong typing through TypeScript support.
-- Assets Compilation: Simplify your assets management with Laravel Mix's
-	straightforward Webpack wrapper.
+- Assets Compilation: Simplify your assets management with Vite.
 - Storybook Integration: Develop and test UI components in isolation and
 	checking them using Storybook interactive environment.
 
@@ -83,7 +81,7 @@ your WordPress site:
 
 	 `bun run build`
 
-	 This command processes your assets using Laravel Mix and prepares them for
+	 This command processes your assets using Vite and prepares them for
 	 production use.
 1. **Activate the Theme:**
 

@@ -34,6 +34,13 @@ class Sample extends Block {
 			'title'    => __( 'Block: Sample', 'tetra-starter-wordpress-theme' ),
 			'fields'   => array(
 				array(
+					'key'           => 'field_' . self::$acf_block_prefix . '_bg_color',
+					'label'         => __( 'Background Color', 'tetra-starter-wordpress-theme' ),
+					'name'          => self::$acf_block_prefix . '_bg_color',
+					'type'          => 'color_picker',
+					'return_format' => 'string',
+				),
+				array(
 					'key'   => 'field_' . self::$acf_block_prefix . '_image',
 					'label' => __( 'Image', 'tetra-starter-wordpress-theme' ),
 					'name'  => self::$acf_block_prefix . '_image',

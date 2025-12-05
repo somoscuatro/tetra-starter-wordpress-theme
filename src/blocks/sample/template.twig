@@ -1,5 +1,8 @@
 {% extends "section.twig" %}
 
+{% set background = get_color_name(bg_color) %}
+{% set foreground = get_foreground_color_name(background) %}
+
 {% block section_content %}
 	<div class="flex flex-col gap-8 md:gap-16 md:flex-row">
 		<div class="flex flex-col gap-4 md:w-1/2 max-w-prose">

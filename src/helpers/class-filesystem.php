@@ -56,4 +56,26 @@ trait Filesystem {
 
 		return (int) $version;
 	}
+
+	/**
+	 * Returns the Content of a File.
+	 *
+	 * @param string $file_path The File Path.
+	 *
+	 * @return string File Content.
+	 */
+	protected function get_file_content( string $file_path = '' ): string {
+		global $wp_filesystem;
+
+		if ( ! $file_path ) {
+			return '';
+		}
+
+		if ( ! $wp_filesystem ) {
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+			WP_Filesystem();
+		}
+
+		return $wp_filesystem->get_contents( $file_path );
+	}
 }

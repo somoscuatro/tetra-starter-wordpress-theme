@@ -1,18 +1,42 @@
-/**
- * This file is the entry point for cosmetic changes.
- *
- * N.B. We are not using @tailwind directives to load base, components and
- * utilities in order to make it work the @layer customizations in the imported
- * filed (e.g. _typo.css).
- * @see https://tailwindcss.com/docs/functions-and-directives#config
- */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
-/** Import files */
-@import "./global/_typo.css";
+@import "./theme/_colors.css";
+@import "./theme/_fonts.css";
 
-/** Import Tailwind CSS Config */
-/* stylelint-disable-next-line at-rule-no-unknown */
-@config "../../tailwind.config.js";
+@source "./src/**/*.{php,twig}";
+@source "./templates/**/*.twig";
+@source "./assets/**/*.js";
+
+@source inline("{bg-folly,bg-crayola,bg-school-bus-yellow,bg-turquoise,bg-yellow-green,bg-anti-flash-white}-{50,{100..900..100}}");
+
+/* Typography */
+@layer base {
+	h1,
+	.h1 {
+		@apply font-syne text-4xl font-semibold;
+	}
+	h2,
+	.h2 {
+		@apply font-syne text-3xl font-semibold;
+	}
+	h3,
+	.h3 {
+		@apply font-syne text-2xl font-semibold;
+	}
+	h4,
+	.h4 {
+		@apply font-syne text-xl font-semibold;
+	}
+	h5,
+	.h5 {
+		@apply font-syne text-lg;
+	}
+	h6,
+	.h6 {
+		@apply font-syne;
+	}
+
+	p {
+		@apply font-jost text-base;
+	}
+}
