@@ -1,15 +1,15 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\CLI\CLI_Command Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\CLI\CLI_Command Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\CLI;
+namespace Somoscuatro\Tetra_Starter_Theme\CLI;
 
-use Somoscuatro\Starter_Theme\Helpers\Filesystem;
+use Somoscuatro\Tetra_Starter_Theme\Helpers\Filesystem;
 
 /**
  * WP CLI Command to Export ACF Fields Blocks to JSON File.

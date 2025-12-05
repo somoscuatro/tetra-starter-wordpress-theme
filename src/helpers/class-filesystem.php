@@ -1,13 +1,13 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Helpers\Filesystem Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Helpers\Filesystem Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\Helpers;
+namespace Somoscuatro\Tetra_Starter_Theme\Helpers;
 
 /**
  * Filesystem Helpers Class.

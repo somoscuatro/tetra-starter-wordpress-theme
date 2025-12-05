@@ -1,11 +1,11 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Attributes\Hook Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Attributes\Hook Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
-namespace Somoscuatro\Starter_Theme\Attributes;
+namespace Somoscuatro\Tetra_Starter_Theme\Attributes;
 
 use DI\Attribute\Inject;
 use DI\Container;

@@ -1,15 +1,15 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Custom_Post_Types\Post_Types\Samples Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Custom_Post_Types\Post_Types\Samples Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\Custom_Post_Types\Post_Types;
+namespace Somoscuatro\Tetra_Starter_Theme\Custom_Post_Types\Post_Types;
 
-use Somoscuatro\Starter_Theme\Custom_Post_Types\Custom_Post_Type;
+use Somoscuatro\Tetra_Starter_Theme\Custom_Post_Types\Custom_Post_Type;
 
 /**
  * Sample Custom Post Type Functionality.

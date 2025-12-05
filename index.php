@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
 use Timber\Timber as TimberLibrary;
 

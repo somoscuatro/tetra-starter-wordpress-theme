@@ -1,18 +1,18 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Timber Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Timber Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
 use Sabberworm\CSS\Parsing\SourceException;
-use Somoscuatro\Starter_Theme\ACF;
-use Somoscuatro\Starter_Theme\Attributes\Action;
-use Somoscuatro\Starter_Theme\Attributes\Filter;
+use Somoscuatro\Tetra_Starter_Theme\ACF;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Filter;
 
 use Symfony\Component\VarDumper\VarDumper;
 use Timber\Timber as TimberLibrary;

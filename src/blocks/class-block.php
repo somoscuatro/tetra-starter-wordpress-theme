@@ -1,15 +1,15 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Blocks\Block Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Blocks\Block Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\Blocks;
+namespace Somoscuatro\Tetra_Starter_Theme\Blocks;
 
-use Somoscuatro\Starter_Theme\Timber;
+use Somoscuatro\Tetra_Starter_Theme\Timber;
 
 /**
  * Class for ACF Gutenberg Blocks.

@@ -1,15 +1,15 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Custom_Taxonomies\Taxonomies\Sample_Category Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Custom_Taxonomies\Taxonomies\Sample_Category Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\Custom_Taxonomies\Taxonomies;
+namespace Somoscuatro\Tetra_Starter_Theme\Custom_Taxonomies\Taxonomies;
 
-use Somoscuatro\Starter_Theme\Custom_Taxonomies\Custom_Taxonomy;
+use Somoscuatro\Tetra_Starter_Theme\Custom_Taxonomies\Custom_Taxonomy;
 
 /**
  * Sample Category Custom Taxonomy.
