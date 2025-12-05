@@ -1,13 +1,13 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Helpers\Filesystem Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Helpers\Filesystem Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\Helpers;
+namespace Somoscuatro\Tetra_Starter_Theme\Helpers;
 
 /**
  * Filesystem Helpers Class.
@@ -55,5 +55,27 @@ trait Filesystem {
 			: filemtime( $this->get_base_path() . '/dist/' );
 
 		return (int) $version;
+	}
+
+	/**
+	 * Returns the Content of a File.
+	 *
+	 * @param string $file_path The File Path.
+	 *
+	 * @return string File Content.
+	 */
+	protected function get_file_content( string $file_path = '' ): string {
+		global $wp_filesystem;
+
+		if ( ! $file_path ) {
+			return '';
+		}
+
+		if ( ! $wp_filesystem ) {
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+			WP_Filesystem();
+		}
+
+		return $wp_filesystem->get_contents( $file_path );
 	}
 }

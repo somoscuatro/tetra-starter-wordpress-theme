@@ -1,15 +1,15 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\GTM Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\GTM Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
-use Somoscuatro\Starter_Theme\Attributes\Action;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
 
 /**
  * Google Tag Manager Custom Functionality.

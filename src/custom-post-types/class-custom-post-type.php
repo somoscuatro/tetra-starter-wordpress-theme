@@ -1,13 +1,13 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Custom_Post_Types\Custom_Post_Type Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Custom_Post_Types\Custom_Post_Type Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\Custom_Post_Types;
+namespace Somoscuatro\Tetra_Starter_Theme\Custom_Post_Types;
 
 /**
  * Custom Post Related Functionality.

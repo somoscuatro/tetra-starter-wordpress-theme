@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
 // Autoload Composer's Dependencies.
 require_once __DIR__ . '/vendor/autoload.php';

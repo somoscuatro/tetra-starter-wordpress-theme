@@ -1,16 +1,16 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\CLI\Commands\Export_ACF_Blocks_Fields Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\CLI\Commands\Export_ACF_Blocks_Fields Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\CLI\Commands;
+namespace Somoscuatro\Tetra_Starter_Theme\CLI\Commands;
 
-use Somoscuatro\Starter_Theme\CLI\CLI_Command;
-use Somoscuatro\Starter_Theme\Timber;
+use Somoscuatro\Tetra_Starter_Theme\CLI\CLI_Command;
+use Somoscuatro\Tetra_Starter_Theme\Timber;
 
 use DI\Attribute\Inject;
 

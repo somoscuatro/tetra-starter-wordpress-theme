@@ -1,16 +1,19 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Timber Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Timber Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
-use Somoscuatro\Starter_Theme\Attributes\Action;
-use Somoscuatro\Starter_Theme\Attributes\Filter;
+use Sabberworm\CSS\Parsing\SourceException;
+use Somoscuatro\Tetra_Starter_Theme\ACF;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Filter;
+
 use Symfony\Component\VarDumper\VarDumper;
 use Timber\Timber as TimberLibrary;
 use Twig\TwigFunction;
@@ -20,6 +23,22 @@ use Twig\Environment as TwigEnvironment;
  * Timber Management Class.
  */
 class Timber {
+
+	/**
+	 * The ACF Class.
+	 *
+	 * @var ACF
+	 */
+	private $acf;
+
+	/**
+	 * Class Constructor.
+	 *
+	 * @param ACF $acf The ACF Class.
+	 */
+	public function __construct( ACF $acf ) {
+		$this->acf = $acf;
+	}
 
 	/**
 	 * Timber Initialization.
@@ -145,6 +164,14 @@ class Timber {
 			new TwigFunction( 'get_image_srcset', array( $this, 'get_image_srcset' ) )
 		);
 
+		$twig->addFunction(
+			new TwigFunction( 'get_color_name', array( $this, 'get_color_name' ) )
+		);
+
+		$twig->addFunction(
+			new TwigFunction( 'get_foreground_color_name', array( $this, 'get_foreground_color_name' ) )
+		);
+
 		return $twig;
 	}
 
@@ -223,5 +250,31 @@ class Timber {
 		}
 
 		return $srcset;
+	}
+
+	/**
+	 * Gets a Color Name Given Its HEX Value.
+	 *
+	 * @param string $color_hex The Color HEX Value.
+	 *
+	 * @return string|int|false The Color Name If Found.
+	 */
+	public function get_color_name( string $color_hex ): string|int|false {
+		return array_search( strtoupper( $color_hex ), $this->acf->get_color_palette(), true );
+	}
+
+	/**
+	 * Gets the Foreground Color Name Given a Background Color Name.
+	 *
+	 * @param  string $background_color_name  The Background Color Name.
+	 *
+	 * @return string The Foreground Color Name.
+	 *
+	 * @throws SourceException If CSS Parsing Fails.
+	 */
+	public function get_foreground_color_name( string $background_color_name ): string {
+		$dark_colors = $this->acf->get_safe_bg_colors_names()['dark'];
+
+		return in_array( $background_color_name, $dark_colors, true ) ? 'anti-flash-white-100' : 'anti-flash-white-900';
 	}
 }

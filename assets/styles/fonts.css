@@ -4,8 +4,7 @@
 		font-style: normal;
 		font-weight: 300 700;
 		font-display: swap;
-		src: url(/wp-content/themes/tetra-starter-wordpress-theme/dist/fonts/jost.woff2)
-			format("woff2");
+		src: url(../fonts/jost.woff2) format("woff2");
 	}
 }
 
@@ -15,7 +14,6 @@
 		font-style: normal;
 		font-weight: 400 700;
 		font-display: swap;
-		src: url(/wp-content/themes/tetra-starter-wordpress-theme/dist/fonts/syne.woff2)
-			format("woff2");
+		src: url(../fonts/syne.woff2) format("woff2");
 	}
 }

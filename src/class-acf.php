@@ -1,16 +1,21 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\ACF Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\ACF Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
-use Somoscuatro\Starter_Theme\Attributes\Action;
-use Somoscuatro\Starter_Theme\Helpers\Filesystem;
+use Sabberworm\CSS\Parser;
+use Sabberworm\CSS\Parsing\SourceException;
+use Sabberworm\CSS\RuleSet\RuleSet;
+use Sabberworm\CSS\Value\Color;
+use Sabberworm\CSS\Value\Size;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
+use Somoscuatro\Tetra_Starter_Theme\Helpers\Filesystem;
 
 /**
  * ACF Custom Functionality.
@@ -20,99 +25,144 @@ class ACF {
 	use Filesystem;
 
 	/**
-	 * The ACF Color Palette.
+	 * The Cached Parsed CSS Color Rules.
 	 *
 	 * @var array
 	 */
-	private $acf_color_palette = array();
+	private static array $cached_color_rules = array();
 
 	/**
 	 * The Allowed Colors Palette for ACF Block Background.
 	 *
 	 * @var array
 	 */
-	private $acf_bg_color_palette = array();
+	private array $allowed_bg_colors = array();
 
 	/**
-	 * ACF Custom Functionality.
+	 * Initializes the Allowed Background Color Palette for ACF.
+	 *
+	 * @throws SourceException If CSS Parsing Fails.
 	 */
 	#[Action( 'init' )]
 	public function setup_color_palette(): void {
-		$this->acf_color_palette    = $this->get_color_palette();
-		$this->acf_bg_color_palette = $this->get_bg_safe_color_palette( $this->acf_color_palette, $this->get_safe_bg_colors_names()['colors'] );
+		$this->allowed_bg_colors = $this->filter_safe_bg_colors( $this->get_color_palette(), $this->get_safe_bg_colors_names()['colors'] );
 	}
 
 	/**
-	 * Gets Color Palette from a JSON File.
+	 * Extracts the Theme's Color Palette from the CSS File.
 	 *
-	 * @return array The Color Palette File Content.
+	 * @return array Associative Array of Color Name => HEX Value.
+	 *
+	 * @throws SourceException If CSS Parsing Fails.
 	 */
-	private function get_color_palette(): array {
-		if ( ! file_exists( $this->get_base_path() . '/tailwind.colors.json' ) ) {
-			return array();
-		}
+	public function get_color_palette(): array {
+		$color_palette = array();
 
-		$tailwind_colors = wp_json_file_decode(
-			$this->get_base_path() . '/tailwind.colors.json',
-			array( 'associative' => true )
-		);
+		foreach ( $this->parse_color_css_file() as $rule_name => $rule_value ) {
+			if ( ! $rule_value instanceof Color ) {
+				continue;
+			}
 
-		$colors_palette = array();
-		foreach ( $tailwind_colors as $color_name => $color_shades ) {
-			foreach ( $color_shades as $color_shade => $hex ) {
-				$colors_palette[ $color_name . '-' . $color_shade ] = $hex;
+			$rgb_color = array();
+
+			foreach ( $rule_value->getColor() as $color_component ) {
+				if ( ! $color_component instanceof Size ) {
+					continue;
+				}
+
+				$rgb_color[] = (int) $color_component->getSize();
+			}
+
+			[$r, $g, $b] = $rgb_color;
+			$hex_color   = sprintf( '#%02X%02X%02X', $r, $g, $b );
+
+			if ( str_starts_with( $rule_name, '--color-' ) ) {
+				$color_palette[ str_replace( '--color-', '', $rule_name ) ] = $hex_color;
 			}
 		}
 
-		return $colors_palette;
+		return $color_palette;
 	}
 
 	/**
-	 * Gets the Safe Background Colors Name from Tailwind Config JSON File.
+	 * Gets the List of Safe Background Color Names from the CSS File.
 	 *
-	 * @return array The Safe Background Colors Name.
+	 * @return array List of Safe Background Color Names.
+	 *
+	 * @throws SourceException If CSS Parsing Fails.
 	 */
-	private function get_safe_bg_colors_names(): array {
-		if ( ! file_exists( $this->get_base_path() . '/tailwind.bg-colors-safelist.json' ) ) {
-			return array();
+	public function get_safe_bg_colors_names(): array {
+		$safe_bg_colors_name = array();
+
+		foreach ( $this->parse_color_css_file() as $rule_name => $rule_value ) {
+			if ( str_starts_with( $rule_name, '--safe-color-' ) ) {
+				$safe_bg_colors_name['colors'][] = str_replace( '--safe-color-', '', $rule_name );
+			}
+
+			if ( str_starts_with( $rule_name, '--safe-dark-color-' ) ) {
+				$safe_bg_colors_name['dark'][] = str_replace( '--safe-dark-color-', '', $rule_name );
+			}
+
+			if ( str_starts_with( $rule_name, '--safe-light-color-' ) ) {
+				$safe_bg_colors_name['light'][] = str_replace( '--safe-light-color-', '', $rule_name );
+			}
 		}
 
-		$safe_bg_colors = wp_json_file_decode(
-			$this->get_base_path() . '/tailwind.bg-colors-safelist.json',
-			array( 'associative' => true )
-		);
-
-		if ( ! isset( $safe_bg_colors ) ) {
-			return array();
-		}
-
-		return $safe_bg_colors;
+		return $safe_bg_colors_name;
 	}
 
 	/**
-	 * Reduces a Given Color Palette to the Background Safe Colors.
+	 * Filters the theme color palette to only include safe background colors.
 	 *
-	 * @param array $color_palette The Tailwind Color Palette.
-	 * @param array $safe_bg_colors The Safe Background Colors Name.
+	 * @param array $palette Associative Array of ColoName => HEX Value.
+	 * @param array $safe_names List of Safe Color Names.
 	 *
-	 * @return array The Background Safe Color Palette.
+	 * @return array Filtered Palette of Safe Background Colors.
 	 */
-	private function get_bg_safe_color_palette( array $color_palette, array $safe_bg_colors ): array {
+	private function filter_safe_bg_colors( array $palette, array $safe_names ): array {
 		return array_filter(
-			$color_palette,
-			function ( $color ) use ( $safe_bg_colors ) {
-				return in_array( 'bg-' . $color, $safe_bg_colors, true );
+			$palette,
+			function ( $color ) use ( $safe_names ) {
+				return in_array( $color, $safe_names, true );
 			},
 			ARRAY_FILTER_USE_KEY
 		);
 	}
 
 	/**
-	 * Restricts the ACF Color Picker Palette.
+	 * Parses the Theme Color CSS File and Returns CSS Variable Rules.
+	 *
+	 * @return array The Parsed Color CSS Rules.
+	 *
+	 * @throws SourceException If CSS Parsing Fails.
+	 */
+	private function parse_color_css_file(): array {
+		if ( ! empty( self::$cached_color_rules ) ) {
+			return self::$cached_color_rules;
+		}
+
+		$theme_color_css        = $this->get_file_content( $this->get_base_path() . '/assets/styles/theme/_colors.css' );
+		$parsed_theme_color_css = new Parser( $theme_color_css )->parse();
+
+		foreach ( $parsed_theme_color_css->getContents() as $item ) {
+			if ( ! $item instanceof RuleSet ) {
+				continue;
+			}
+
+			foreach ( $item->getRules() as $rule ) {
+				self::$cached_color_rules[ $rule->getRule() ] = $rule->getValue();
+			}
+		}
+
+		return self::$cached_color_rules;
+	}
+
+	/**
+	 * Restricts the ACF Color Picker Palette to Allowed Background Colors.
 	 */
 	#[Action( 'acf/input/admin_footer' )]
 	public function restrict_color_picker_palette(): void {
-		$palette = implode( "','", array_values( $this->acf_bg_color_palette ) );
+		$palette = implode( "','", array_values( $this->allowed_bg_colors ) );
 		?>
 		<script type="text/javascript">
 			(function() {

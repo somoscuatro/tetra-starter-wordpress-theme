@@ -1,22 +1,22 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Theme Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Theme Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
 use DI\Attribute\Inject;
 
-use Somoscuatro\Starter_Theme\Attributes\Action;
-use Somoscuatro\Starter_Theme\Attributes\Filter;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Filter;
 
-use Somoscuatro\Starter_Theme\Blocks\Loader as BlocksLoader;
-use Somoscuatro\Starter_Theme\Custom_Post_Types\Loader as CustomPostTypesLoader;
-use Somoscuatro\Starter_Theme\Custom_Taxonomies\Loader as CustomTaxonomiesLoader;
+use Somoscuatro\Tetra_Starter_Theme\Blocks\Loader as BlocksLoader;
+use Somoscuatro\Tetra_Starter_Theme\Custom_Post_Types\Loader as CustomPostTypesLoader;
+use Somoscuatro\Tetra_Starter_Theme\Custom_Taxonomies\Loader as CustomTaxonomiesLoader;
 
 /**
  * Main Theme Class.
@@ -52,7 +52,7 @@ class Theme {
 	 *
 	 * @var string
 	 */
-	private $prefix = 'starter_theme';
+	private $prefix = 'tetra_starter_theme';
 
 	/**
 	 * Initialization method.

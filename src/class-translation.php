@@ -1,16 +1,16 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Translation Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Translation Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
-use Somoscuatro\Starter_Theme\Attributes\Action;
-use Somoscuatro\Starter_Theme\Helpers\Filesystem;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
+use Somoscuatro\Tetra_Starter_Theme\Helpers\Filesystem;
 
 /**
  * Translations Management Class.
