@@ -6,10 +6,6 @@ export default defineConfig({
 	root: '',
 	base: '',
 	server: {
-		https: {
-			key: '/etc/ssl/cert-key.pem',
-			cert: '/etc/ssl/cert.pem',
-		},
 		host: '0.0.0.0',
 		port: 5173,
 		strictPort: true,
