@@ -1,15 +1,15 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Navigation Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Navigation Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
-use Somoscuatro\Starter_Theme\Attributes\Action;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
 
 /**
  * WordPress Custom Navigation Functionality.

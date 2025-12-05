@@ -1,15 +1,15 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Blocks\Block_Interface Interface.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Blocks\Block_Interface Interface.
  *
  * @package somoscuatro-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\Blocks;
+namespace Somoscuatro\Tetra_Starter_Theme\Blocks;
 
-use Somoscuatro\Starter_Theme\Timber;
+use Somoscuatro\Tetra_Starter_Theme\Timber;
 
 /**
  * Interface for ACF Gutenberg Blocks.

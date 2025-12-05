@@ -1,16 +1,16 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Gutenberg Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Gutenberg Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
-use Somoscuatro\Starter_Theme\Attributes\Action;
-use Somoscuatro\Starter_Theme\Attributes\Filter;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Filter;
 
 use WP_Block_Editor_Context;
 

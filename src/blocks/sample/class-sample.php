@@ -1,15 +1,15 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\BLocks\Sample\Sample Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\BLocks\Sample\Sample Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\Blocks\Sample;
+namespace Somoscuatro\Tetra_Starter_Theme\Blocks\Sample;
 
-use Somoscuatro\Starter_Theme\Blocks\Block;
+use Somoscuatro\Tetra_Starter_Theme\Blocks\Block;
 
 /**
  * Block Main Functionality.

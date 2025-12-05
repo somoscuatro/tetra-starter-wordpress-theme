@@ -194,7 +194,7 @@ To use method attributes in your class methods, follow these steps:
 	 ```php
 		// src/class-my-beautiful-class.php
 
-		namespace Somoscuatro\Starter_Theme;
+		namespace Somoscuatro\Tetra_Starter_Theme;
 
 		class My_Beautiful_Class {
 
@@ -213,9 +213,9 @@ To use method attributes in your class methods, follow these steps:
 	 ```php
 		// src/class-my-beautiful-class.php
 
-		namespace Somoscuatro\Starter_Theme;
+		namespace Somoscuatro\Tetra_Starter_Theme;
 
-		use Somoscuatro\Starter_Theme\Attributes\Action;
+		use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
 
 		class My_Beautiful_Class {
 
@@ -231,9 +231,9 @@ To use method attributes in your class methods, follow these steps:
 	 ```php
 		// src/class-my-beautiful-class.php
 
-		namespace Somoscuatro\Starter_Theme;
+		namespace Somoscuatro\Tetra_Starter_Theme;
 
-		use Somoscuatro\Starter_Theme\Attributes\Filter;
+		use Somoscuatro\Tetra_Starter_Theme\Attributes\Filter;
 
 		class My_Beautiful_Class {
 
@@ -271,7 +271,7 @@ To use method attributes in your class methods, follow these steps:
 	 	```php
 			 // hooked-classes.php
 
-			 use Somoscuatro\Starter_Theme\My_Beautiful_Class;
+			 use Somoscuatro\Tetra_Starter_Theme\My_Beautiful_Class;
 
 			 return [
 				 // Other classes

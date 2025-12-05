@@ -1,11 +1,11 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Attributes\Filter Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Attributes\Filter Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
-namespace Somoscuatro\Starter_Theme\Attributes;
+namespace Somoscuatro\Tetra_Starter_Theme\Attributes;
 
 use Attribute;
 

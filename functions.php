@@ -7,8 +7,8 @@
 
 declare(strict_types=1);
 
-use Somoscuatro\Starter_Theme\CLI\CLI;
-use Somoscuatro\Starter_Theme\Attributes\Hook;
+use Somoscuatro\Tetra_Starter_Theme\CLI\CLI;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Hook;
 
 use DI\ContainerBuilder;
 

@@ -1,21 +1,21 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\ACF Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\ACF Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme;
+namespace Somoscuatro\Tetra_Starter_Theme;
 
 use Sabberworm\CSS\Parser;
 use Sabberworm\CSS\Parsing\SourceException;
 use Sabberworm\CSS\RuleSet\RuleSet;
 use Sabberworm\CSS\Value\Color;
 use Sabberworm\CSS\Value\Size;
-use Somoscuatro\Starter_Theme\Attributes\Action;
-use Somoscuatro\Starter_Theme\Helpers\Filesystem;
+use Somoscuatro\Tetra_Starter_Theme\Attributes\Action;
+use Somoscuatro\Tetra_Starter_Theme\Helpers\Filesystem;
 
 /**
  * ACF Custom Functionality.

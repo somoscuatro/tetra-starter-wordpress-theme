@@ -1,16 +1,16 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Blocks\Loader Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\Blocks\Loader Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\Blocks;
+namespace Somoscuatro\Tetra_Starter_Theme\Blocks;
 
 use DI\Attribute\Inject;
-use Somoscuatro\Starter_Theme\Timber;
+use Somoscuatro\Tetra_Starter_Theme\Timber;
 
 /**
  * Gutenberg Blocks loader.

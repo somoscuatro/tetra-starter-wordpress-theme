@@ -1,13 +1,13 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\CLI\CLI Class.
+ * Contains Somoscuatro\Tetra_Starter_Theme\CLI\CLI Class.
  *
  * @package tetra-starter-wordpress-theme
  */
 
 declare(strict_types=1);
 
-namespace Somoscuatro\Starter_Theme\CLI;
+namespace Somoscuatro\Tetra_Starter_Theme\CLI;
 
 use DI\Attribute\Inject;
 use DI\Container;
